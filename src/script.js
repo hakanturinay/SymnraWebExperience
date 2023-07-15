@@ -177,7 +177,7 @@ var animations
 const planeSize = 0.5;
 const geometry = new THREE.PlaneGeometry(planeSize, planeSize);
 var videoBriskSmokeSide = document.createElement('video')
-videoBriskSmokeSide.src = ('./Coffee_Steam_Long_Version.mp4')
+videoBriskSmokeSide.src = ('Coffee_Steam_Long_Version.mp4')
 var videoTextureBriskSmokeSide = new THREE.VideoTexture(videoBriskSmokeSide)
 
 videoBriskSmokeSide.setAttribute('preload', 'auto')
