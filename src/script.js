@@ -473,7 +473,7 @@ gltfLoader.load(
     reverseSpecificAnimation("Steak_Animation", 7, 4);
     setTimeout(() => {
       smokeMaterial.opacity =0
-      videoBriskSmokeSide.reset()
+      videoBriskSmokeSide.pause()
       // videoBriskSmokeSide.loop = true
     }, 500);
   }
