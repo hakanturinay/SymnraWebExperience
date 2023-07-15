@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smyrna</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body>
+
+    <audio id="steakSound" loop>
+        <source src="SteakSizzling.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="audioEmbed" loop autoplay>
+        <source src="JazzIt.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="logo">
+        <img src="smyrna_logo.png" alt="">
+    </div>
+    <div id="nominated-logo">
+        <img src="UX_Design_Awards_2023_Logo_RGB@2x.png" alt="">
+    </div>
+    <canvas class="webgl"></canvas>
+    <div class="qr-code" id="qr-code-id">
+        <img id = "qrcodeImg" src="Symnra_QR.png" alt="">
+        <!-- <span class="close" id="close-btn">&times;</span> -->
+    </div>
+    <div class="category-card" id="category-card">
+        <div id="content">
+          <h2>Fancy title</h2>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit
+                         esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                         occaecat cupidatat non proident, sunt in culpa qui officia
+                         deserunt mollit anim id est laborum.</p>
+        </div>
+  
+        <div id="bottom-buttons">
+            
+              <button class="circle-AR" id="qr-button-id">
+                  <span class="material-symbols-outlined">
+                      view_in_ar
+                      </span>
+              </button>
+              <button class="circle-AllAnimation" id="run-all-animation">
+                <span class="material-symbols-outlined">
+                    animation
+                    </span>
+              </button>
+              <button class="circle-Volume" id="volumeButton">
+                <span class="material-symbols-outlined" id="volume-span">
+                    volume_up
+                    </span>
+              </button>
+              <button class="button-learn-more">
+                <span>Learn more</span>
+                
+              </button>
+        </div>
+        
+      </div>
+    <div class="loading-bar"></div>
+
+    <div class="point point-0" id="scene-paddleBox">
+        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
+            add
+            </span></h2>
+        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
+    </div>
+    <div class="point point-1" id="scene-drawer">
+        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
+            add
+            </span></h2>
+        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
+    </div>
+    <div class="point point-2" id="scene-chair">
+        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
+            add
+            </span></h2>
+        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
+    </div>
+
+    <div class="point point-3" id="scene-sideDrawer">
+        <!-- <div class="label">+</div> -->
+        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
+            add
+            </span></h2>
+        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
+    </div>
+
+    <div class="point point-4" id="scene-Steak&Pan">
+        <!-- <div class="label">+</div> -->
+        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
+            add
+            </span></h2>
+        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
+    </div>
+
+      
+    <script type="module" src="./script.js"></script>
+</body>
+</html>
