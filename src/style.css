@@ -177,6 +177,7 @@ body
   }
 
   #content {
+    display: none;
     opacity: 0;
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -218,10 +219,12 @@ body
   }
   .fade-in {
     animation-name: fadeIn;
+    display: block;
   }
   
   .fade-out {
     animation-name: fadeOut;
+    display: none;
   }
 
   .category-card h2 {
