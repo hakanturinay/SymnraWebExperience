@@ -259,7 +259,7 @@ gltfLoader.load(
     }
 )
 gltfLoader.load(
-    '/models/last.glb',
+    '/models/wallModel3.glb',
     (gltf) =>
     {
   
