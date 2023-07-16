@@ -633,7 +633,7 @@ controls.enableZoom = true;
 controls.zoomSpeed = 0.75; // Decrease the zoom speed for smoother zooming
 controls.enableRotate = true;
 controls.rotateSpeed = 0.5; // Decrease the rotation speed for smoother rotation
-
+controls.enablePan = false;
 controls.minDistance = minZoom; // Set the minimum distance to zoom in
 controls.maxDistance = maxZoom; // Set the maximum distance to zoom out
 

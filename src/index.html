@@ -103,10 +103,14 @@
     <script>
         var flag=true
         function startSound(){
-            if(flag){
+            document.getElementById('audioEmbed').addEventListener('loadeddata', () => {
+                if(flag){
+                
                 document.getElementById('audioEmbed').play()
                 flag=false
             }
+            });
+         
         }
     </script>
 </body>
