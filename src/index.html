@@ -25,7 +25,7 @@
     <div id="nominated-logo">
         <img src="UX_Design_Awards_2023_Logo_RGB@2x.png" alt="">
     </div>
-    <canvas class="webgl"></canvas>
+    <canvas class="webgl" ontouchstart="startSound()" onclick="startSound()"></canvas>
     <div class="qr-code" id="qr-code-id">
         <img id = "qrcodeImg" src="Symnra_QR.png" alt="">
         <!-- <span class="close" id="close-btn">&times;</span> -->
@@ -100,5 +100,14 @@
 
       
     <script type="module" src="./script.js"></script>
+    <script>
+        var flag=true
+        function startSound(){
+            if(flag){
+                document.getElementById('audioEmbed').play()
+                flag=false
+            }
+        }
+    </script>
 </body>
 </html>
