@@ -216,12 +216,16 @@ gltfLoader.load(
         bottle.renderOrder = -1;
         bottle.material.needsUpdate = true
         bottle.material.depthWrite = false
+        console.log(model.getObjectByName('Fry_pan_FryPan_0_1'))
+        model.getObjectByName('Fry_pan_FryPan_0_1').castShadow =true
         planeMesh.position.copy( model.getObjectByName('Pan_Pivot').position );
         planeMesh.position.x -=0.65
         planeMesh.position.z -=0.38
         planeMesh.position.y +=0.05
         planeMesh.rotation.x = Math.PI/6
         planeMesh.renderOrder = -1;
+
+        // model.getObjectByName('Pan_Pivot').position.y +=0.01
         // planeMesh.position.z +=3
         /**
          * GLASS ICIN KULLANIRIZ
