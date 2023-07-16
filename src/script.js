@@ -662,7 +662,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
  const clock = new THREE.Clock();
 const tick = () =>
 {
-  console.log(camera.position)
+  // console.log(camera.position)
     // Update controls
     controls.update()
     // requestAnimationFrame(animate);
