@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { gsap } from 'gsap'
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 import { Vector3 } from 'three';
 let isWeb = true
@@ -19,9 +20,9 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
   document.getElementById('qr-code-id').style.display = "none"
   minZoom = 4
   maxZoom = 8 
-  cameraPos.x = 0.1162963826866886
-  cameraPos.y = 2.3266749445489436
-  cameraPos.z = -7.653303786847961
+  cameraPos.x = 0.09970961110599963
+  cameraPos.y = 1.9948329305826507
+  cameraPos.z = -6.56175133424877
   point0Pos = new THREE.Vector3(0.1, 1, 0.5)
   point1Pos = new THREE.Vector3(1.35, 0, -0.7)
   point2Pos = new THREE.Vector3(-0.8, 0.2, -0.4)
@@ -75,7 +76,10 @@ const loadingManager = new THREE.LoadingManager(
         loadingBarElement.style.transform = `scaleX(${progressRatio})`
     }
 )
+const dracoLoader = new DRACOLoader()
+dracoLoader.setDecoderPath('/draco/')
 const gltfLoader = new GLTFLoader(loadingManager)
+gltfLoader.setDRACOLoader(dracoLoader)
 const cubeTextureLoader = new THREE.CubeTextureLoader(loadingManager)
 
 /**
@@ -203,7 +207,7 @@ const planeMesh = new THREE.Mesh(geometry, smokeMaterial);
 scene.add(planeMesh);
 
 gltfLoader.load(
-    '/models/ALLINONE_KITCHEN_V11.glb',
+    '/models/kitchen3_draco.glb',
     (gltf) =>
     {
         model = gltf.scene;
@@ -212,6 +216,8 @@ gltfLoader.load(
         gltf.scene.position.x +=0.15
         gltf.scene.rotation.y = Math.PI 
         var bottle = model.getObjectByName('Cylinder003');
+    
+        console.log(model.getObjectByName('Cylinder').material)
         bottle.material = bottleMaterial
         bottle.renderOrder = -1;
         bottle.material.needsUpdate = true
@@ -219,7 +225,7 @@ gltfLoader.load(
         console.log(model.getObjectByName('Fry_pan_FryPan_0_1'))
         model.getObjectByName('Fry_pan_FryPan_0_1').castShadow =true
         planeMesh.position.copy( model.getObjectByName('Pan_Pivot').position );
-        planeMesh.position.x -=0.65
+        planeMesh.position.x -=0.625
         planeMesh.position.z -=0.38
         planeMesh.position.y +=0.05
         planeMesh.rotation.x = Math.PI/6
@@ -656,7 +662,7 @@ renderer.outputEncoding = THREE.sRGBEncoding
  const clock = new THREE.Clock();
 const tick = () =>
 {
-
+  console.log(camera.position)
     // Update controls
     controls.update()
     // requestAnimationFrame(animate);
