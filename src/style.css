@@ -359,6 +359,12 @@ body
 
 @media(max-width: 600px) {
 
+  #content{
+    max-height: 180px;
+    scroll-behavior: auto;
+    overflow: hidden;
+  }
+
   #nominated-logo{
    top: 2em;
    right: 1em;
@@ -379,6 +385,8 @@ body
   .category-card {
     /* right: 1em;
     left: 1em; */
+    right: 0;
+    left: 5%;
   }
   .point.visible .label 
 {

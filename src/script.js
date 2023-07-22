@@ -15,6 +15,7 @@ let point1Pos = new THREE.Vector3(1.2, 0, -0.7)
 let point2Pos = new THREE.Vector3(-1.1, 0.15, -0.4)
 let point3Pos = new THREE.Vector3(-1.7, 0.8, 0.45)
 let point4Pos = new THREE.Vector3(-0.5, 0.8,-0.2)
+let point5Pos = new THREE.Vector3(1, 0.85, 0.1)
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   isWeb = false
   document.getElementById('qr-code-id').style.display = "none"
@@ -63,6 +64,8 @@ const loadingManager = new THREE.LoadingManager(
             document.getElementById('logo').classList.add('fade-in')
             document.getElementById('nominated-logo').classList.add('fade-in')
             document.getElementById('bottom-buttons').classList.add('fade-in')
+            document.getElementById('content').classList.add('fade-in')
+            document.getElementById('content').classList.remove('fade-out')
             sceneReady = true
 
         }, 2500)
@@ -207,7 +210,7 @@ const planeMesh = new THREE.Mesh(geometry, smokeMaterial);
 scene.add(planeMesh);
 
 gltfLoader.load(
-    '/models/kitchen3_draco.glb',
+    '/models/SMYRNA_ALLINONEKITCHEN.glb',
     (gltf) =>
     {
         model = gltf.scene;
@@ -217,7 +220,7 @@ gltfLoader.load(
         gltf.scene.rotation.y = Math.PI 
         var bottle = model.getObjectByName('Cylinder003');
     
-        console.log(model.getObjectByName('Cylinder').material)
+        //console.log(model.getObjectByName('Cylinder').material)
         bottle.material = bottleMaterial
         bottle.renderOrder = -1;
         bottle.material.needsUpdate = true
@@ -302,6 +305,10 @@ gltfLoader.load(
       position: point4Pos,
       element: document.querySelector('.point-4')
   },
+  {
+    position: point5Pos,
+    element: document.querySelector('.point-5')
+},
  ]
 
 /**
@@ -383,6 +390,10 @@ gltfLoader.load(
  let counterSideDrawer = 0;
  let counterSteakPan = 0;
  let counterAllAnimation = 0;
+
+ const titleContext = document.getElementById('title-context');
+ const bodyContext = document.getElementById('body-context');
+
  
  function handleDrawerClick() {
    if (animationFlags.some((flag) => flag) || reverseAnimationFlags.some((flag) => flag)) {
@@ -392,6 +403,8 @@ gltfLoader.load(
    if (counterDrawer === 0) {
      counterDrawer++;
      points[1].element.classList.add('clicked');
+     titleContext.innerHTML="Sink Cabinets"
+     bodyContext.innerHTML="By combining the sink, waste bins, and additional storage into a single cabinet, this all-in-one design optimizes space usage. Placing the waste bins and storage in close proximity to the sink improves the overall workflow in the kitchen. This arrangement allows for a seamless transition between washing dishes, disposing of waste, and accessing frequently used kitchen tools and supplies."
      runSpecificAnimation("MainBelow_Drawer.001", 0, 1);
      runSpecificAnimation("MainUpper_Drawer.001", 1, 1);
    } else {
@@ -412,6 +425,8 @@ gltfLoader.load(
      points[2].element.classList.add('clicked');
      runSpecificAnimation("BarStool_01.001", 2, 2);
      runSpecificAnimation("BarStool_02.002", 3, 2);
+     titleContext.innerHTML="Hidden Bar Stools"
+     bodyContext.innerHTML="The inclusion of hidden bar stools ensures that additional seating is readily available without occupying valuable floor space. When not in use, the bar stools can be neatly tucked away under the counter, maintaining a clutter-free and streamlined look in the kitchen."
    } else {
      counterChair--;
      points[2].element.classList.remove('clicked');
@@ -428,7 +443,8 @@ gltfLoader.load(
    if (counterPaddleBox === 0) {
      counterPaddleBox++;
      points[0].element.classList.add('clicked');
-    
+     titleContext.innerHTML="Franke Dowdraft Hood"
+     bodyContext.innerHTML="The downdraft hood is an integral part of this all-in-one kitchen design. It effectively captures and removes cooking odors, smoke, and grease at the source by drawing them downward, thereby enhancing ventilation and maintaining a clean kitchen environment." 
      runSpecificAnimation("Davlumbaz.001", 4, 0);
    } else {
      counterPaddleBox--;
@@ -445,7 +461,8 @@ gltfLoader.load(
    if (counterSideDrawer === 0) {
      counterSideDrawer++;
      points[3].element.classList.add('clicked');
-    
+     titleContext.innerHTML="Hidden Vertical Cabinet"
+     bodyContext.innerHTML="The hidden vertical cabinet is an innovative storage solution, providing ample space for storing kitchen essentials, pantry items, and cookware. This maximizes storage capacity without compromising on the overall aesthetics of the kitchen."
      runSpecificAnimation("SideDrawer", 5, 3);
    } else {
      counterSideDrawer--;
@@ -468,6 +485,8 @@ gltfLoader.load(
     points[4].element.classList.add('clicked');
     runSpecificAnimation("Pan_Animation", 6, 4);
     runSpecificAnimation("Steak_Animation", 7, 4);
+    titleContext.innerHTML="Dexcook Induction Cooktop"
+    bodyContext.innerHTML="The inclusion of an induction cooktop offers several advantages. It is energy-efficient, fast, and safe, as it only heats the cookware and not the surrounding surface. Induction cooking also provides the space that is usually occupied by the common cooktop, and creates the cleanest look."
     setTimeout(() => {
       smokeMaterial.opacity =0.35
       videoBriskSmokeSide.play()
@@ -486,6 +505,24 @@ gltfLoader.load(
       videoBriskSmokeSide.pause()
       // videoBriskSmokeSide.loop = true
     }, 500);
+  }
+}
+
+function handleWoodClick() {
+  if (animationFlags.some((flag) => flag) || reverseAnimationFlags.some((flag) => flag)) {
+    return;
+  }
+
+  if (counterSideDrawer === 0) {
+    counterSideDrawer++;
+    points[5].element.classList.add('clicked');
+    runSpecificAnimation("Ahsap_KesmeTahtası", 8, 5);
+    titleContext.innerHTML="Built in Drainer"
+    bodyContext.innerHTML="The kitchen features a built-in drainer, which provides a convenient area for drying dishes and other kitchenware. This eliminates the need for a separate dish rack or drying area, saving additional space on the countertop and promoting a neat and organized kitchen environment."
+  } else {
+    counterSideDrawer--;
+    points[5].element.classList.remove('clicked');
+    reverseSpecificAnimation("Ahsap_KesmeTahtası", 8, 5);
   }
 }
  
@@ -507,6 +544,8 @@ gltfLoader.load(
      runSpecificAnimation("SideDrawer", 5);
      runSpecificAnimation("Pan_Animation", 6);
     runSpecificAnimation("Steak_Animation", 7);
+    runSpecificAnimation("Ahsap_KesmeTahtası", 8);
+    document.getElementById('content').classList.add('fade-out')
     setTimeout(() => {
       smokeMaterial.opacity =0.35
       videoBriskSmokeSide.play()
@@ -523,9 +562,10 @@ gltfLoader.load(
      reverseSpecificAnimation("SideDrawer", 5);
      reverseSpecificAnimation("Pan_Animation", 6);
      reverseSpecificAnimation("Steak_Animation", 7);
+     reverseSpecificAnimation("Ahsap_KesmeTahtası", 8);
      setTimeout(() => {
       smokeMaterial.opacity =0
-      videoBriskSmokeSide.reset()
+      //videoBriskSmokeSide.reset()
       // videoBriskSmokeSide.loop = true
     }, 500);
    }
@@ -537,6 +577,7 @@ gltfLoader.load(
  document.getElementById("scene-sideDrawer").addEventListener("click", handleSideDrawerClick);
  document.getElementById("run-all-animation").addEventListener("click", handleRunAllAnimationClick);
  document.getElementById("scene-Steak&Pan").addEventListener("click", handleSteakPan);
+ document.getElementById("scene-Wood").addEventListener("click", handleWoodClick);
 const qrButton = document.getElementById('qr-button-id');
 const qrCodeElement = document.getElementById('qr-code-id');
 let qrButtonHandler = 0;
