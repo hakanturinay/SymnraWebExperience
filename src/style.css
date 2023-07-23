@@ -67,6 +67,8 @@ body
   display: none;
   animation-duration: 1s;
   animation-fill-mode: forwards;
+  -webkit-animation: 1s;
+  -webkit-animation-fill-mode: forwards;
 }
 
 .point
@@ -454,7 +456,15 @@ body
 }
 
 
+@-webkit-keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
+@-webkit-keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
 
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -470,7 +480,7 @@ body
 @media(max-width: 600px) {
 
   #body-context-intro{
-    font-size: 0.48em;
+    font-size: 0.em;
   }
 
   .modalView{
