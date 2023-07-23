@@ -11,6 +11,8 @@
 </head>
 <body>
 
+    
+
     <audio id="steakSound" loop>
         <source src="SteakSizzling.mp3" type="audio/mpeg">
     </audio>
@@ -25,16 +27,14 @@
     <div id="nominated-logo">
         <img src="UX_Design_Awards_2023_Logo_RGB@2x.png" alt="">
     </div>
-    <canvas class="webgl" ontouchstart="startSound()" onclick="startSound()"></canvas>
-    <div class="qr-code" id="qr-code-id">
-        <img id = "qrcodeImg" src="Symnra_QR.png" alt="">
-        <!-- <span class="close" id="close-btn">&times;</span> -->
-    </div>
-    <div class="category-card" id="category-card">
-        <div id="content">
-          <h2 id="title-context">Welcome!</h2>
-          <p id="body-context">Experience the future of kitchen design with the All-in-One Smyrna
-            Kitchen AR presentation! <br>This innovative product offers a range of
+    <canvas class="webgl"></canvas>
+
+    <div class="modalView" id="modalView">
+        <!-- <div id="modalView__closeBtn"></div> -->
+        <div class="modalView__content centered">
+            <h1>Welcome!</h1> 
+          <p id="body-context-intro">Experience the future of kitchen design with the All-in-One Smyrna
+            Kitchen AR presentation! This innovative product offers a range of
             functionalities:<br><br>
             
             Space Optimization: Maximize storage with hidden compartments,
@@ -51,6 +51,23 @@
             non-absorbent materials on the cooktop, the All-in-One Kitchen ensures
             long-lasting quality while reducing energy consumption and
             environmental impact.<br><br></p>
+        </div>
+        <button class="button-skipIntro" id="button-skipIntro">
+            <span>Start Experience</span>
+            
+          </button>
+    </div>
+
+    <div class="qr-code" id="qr-code-id">
+        <img id = "qrcodeImg" src="Symnra_QR.png" alt="">
+        <!-- <span class="close" id="close-btn">&times;</span> -->
+    </div>
+    <div class="category-card" id="category-card">
+        <div id="content">
+          <h2 id="title-context">Welcome!</h2>
+          <p id="body-context">Experience the future of kitchen design with the All-in-One Smyrna
+            Kitchen AR presentation! This innovative product offers a range of
+            functionalities:</p>
         </div>
   
         <div id="bottom-buttons">
@@ -78,7 +95,8 @@
         
       </div>
     <div class="loading-bar"></div>
-
+    
+    <div id="all-points">
     <div class="point point-0" id="scene-paddleBox">
         <h2 class="label" id='plus' ><span class="material-symbols-outlined">
             add
@@ -121,21 +139,8 @@
             </span></h2>
         <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
     </div>
-
+    </div>
       
     <script type="module" src="./script.js"></script>
-    <script>
-        var flag=true
-        function startSound(){
-            document.getElementById('audioEmbed').addEventListener('loadeddata', () => {
-                if(flag){
-                
-                document.getElementById('audioEmbed').play()
-                flag=false
-            }
-            });
-         
-        }
-    </script>
 </body>
 </html>

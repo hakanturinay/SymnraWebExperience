@@ -4,6 +4,8 @@ body
 {
     font-family: 'Poppins';
     overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden
 }
 
 .webgl
@@ -59,6 +61,12 @@ body
     transform: scaleX(0);
     transform-origin: 100% 0;
     transition: transform 1.5s ease-in-out;
+}
+
+#all-points {
+  display: none;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
 }
 
 .point
@@ -212,7 +220,7 @@ body
     /* width: 100%; */
     max-width: 300px;
     padding: 0.5rem 0.75rem 0.5rem 0.75rem;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -251,6 +259,24 @@ body
     margin-top: 1.25rem;
   }
   .category-card .button-learn-more {
+    font: inherit;
+    line-height: 1;
+    background: rgba(255,255,255,.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+    color: #eaeaea;
+    padding: 0.8em 1em;
+    border-radius: 6px;
+    font-weight: 500;
+    gap: 0.5rem;
+    cursor: pointer;
+    margin: 1em;
+    margin-left: 0.1em;
+    margin-right: 0.5em;
+    border: none;
+  }
+
+  .button-skipIntro{
     font: inherit;
     line-height: 1;
     background: rgba(255,255,255,.05);
@@ -337,7 +363,7 @@ body
 }
 
 #bottom-buttons{
-    display: flex;
+    display: none;
     justify-content: space-around;
     align-items: center;
     opacity: 0;
@@ -345,6 +371,88 @@ body
     animation-fill-mode: forwards;
     pointer-events: all;
 }
+
+.modalView {
+  z-index: 3;
+  width: 600px;
+  position: fixed;
+  border-radius: 5px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px 65px;
+  font-size: 1.2rem;
+  background: rgb(50 50 50 / 50%);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  flex-direction: column;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  overflow: hidden;
+}
+
+.modalView > .modalView__content {
+  color: white;
+  text-shadow: 1px 1px #000000;
+}
+.modalView > .modalView__content.centered {
+  text-align: center;
+}
+
+.modalView__content h1 {
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+}
+.modalView__content p {
+  font-size: 1rem;
+}
+
+#modalView__closeBtn {
+  position: absolute;
+  background: rgba(102, 102, 102, 0.6);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
+  backdrop-filter: blur(20px);
+  width: 35px;
+  border-radius: 35px;
+  height: 35px;
+  right: -17px;
+  top: -17px;
+  color: white;
+}
+
+#modalView__closeBtn {
+  cursor: pointer;
+}
+#modalView__closeBtn:after,
+#modalView__closeBtn:before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  border-top: 3px solid #ffffff;
+  position: absolute;
+  top: 13px;
+  right: 0px;
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+#modalView__closeBtn:before {
+  color: white;
+  right: 14px;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+#modalView__closeBtn:hover {
+  background-color: green;
+}
+
 
 @keyframes fadeIn {
   from { opacity: 0; }
