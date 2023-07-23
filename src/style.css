@@ -189,7 +189,6 @@ body
     position: absolute;
     right: 2em;
     z-index: 2;
-    pointer-events: none;
   }
 
   #content {
@@ -208,7 +207,6 @@ body
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    pointer-events: none;
   }
   .qr-code {
     z-index: 2;
@@ -492,7 +490,7 @@ body
   #content{
     max-height: 180px;
     scroll-behavior: auto;
-    overflow: hidden;
+    overflow: auto;
   }
 
   #nominated-logo{
