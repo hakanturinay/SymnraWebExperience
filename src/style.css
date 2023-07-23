@@ -454,6 +454,8 @@ body
 }
 
 
+
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -466,6 +468,16 @@ body
 
 
 @media(max-width: 600px) {
+
+  #body-context-intro{
+    font-size: 0.48em;
+  }
+
+  .modalView{
+    width: 90%;
+    height: 90%;
+    padding: 10px 10px;
+  }
 
   #content{
     max-height: 180px;
