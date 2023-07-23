@@ -482,13 +482,17 @@ body
 @media(max-width: 600px) {
 
   #body-context-intro{
-    font-size: 0.7em;
+    font-size: 0.8em;
   }
 
   .modalView{
-    width: 90%;
-    height: 90%;
+    width: 85%;
+    height: 75%;
     padding: 10px 10px;
+    top: 55%;
+  }
+  .modalView__content.centered{
+    overflow-y: auto;
   }
 
   #content{
