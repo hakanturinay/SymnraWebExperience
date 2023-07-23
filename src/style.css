@@ -205,7 +205,7 @@ body
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
     backdrop-filter: blur(10px);
     border-radius: 8px;
-    width: 100%;
+
     max-width: 300px;
     padding: 1rem 1.5rem 1rem 1.5rem;
     display: flex;
@@ -502,6 +502,9 @@ body
     max-height: 180px;
     scroll-behavior: auto;
     overflow: auto;
+    max-width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   #nominated-logo{
@@ -524,8 +527,9 @@ body
   .category-card {
     /* right: 1em;
     left: 1em; */
-    
-  }
+ width: 95%;
+ right: 0;
+}
   .point.visible .label 
 {
     transform: scale(0.75, 0.75);
