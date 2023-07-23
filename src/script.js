@@ -408,6 +408,7 @@ gltfLoader.load(
      runSpecificAnimation("MainUpper_Drawer.001", 1, 1);
      document.getElementById('content').classList.add('fade-in')
    document.getElementById('content').classList.remove('fade-out')
+   document.getElementById('content').scrollTop = 0;
    } else {
      counterDrawer--;
      points[1].element.classList.remove('clicked');
@@ -430,6 +431,7 @@ gltfLoader.load(
      runSpecificAnimation("BarStool_02.002", 3, 2);
      document.getElementById('content').classList.add('fade-in')
    document.getElementById('content').classList.remove('fade-out')
+   document.getElementById('content').scrollTop = 0
      titleContext.innerHTML="Hidden Bar Stools"
      bodyContext.innerHTML="The inclusion of hidden bar stools ensures that additional seating is readily available without occupying valuable floor space. When not in use, the bar stools can be neatly tucked away under the counter, maintaining a clutter-free and streamlined look in the kitchen."
    } else {
@@ -439,6 +441,7 @@ gltfLoader.load(
      reverseSpecificAnimation("BarStool_02.002", 3, 2);
      document.getElementById('content').classList.remove('fade-in')
    document.getElementById('content').classList.add('fade-out')
+   document.getElementById('content').scrollTop = 0
    }
  }
  
@@ -452,6 +455,7 @@ gltfLoader.load(
      points[0].element.classList.add('clicked');
      document.getElementById('content').classList.add('fade-in')
    document.getElementById('content').classList.remove('fade-out')
+   document.getElementById('content').scrollTop = 0
      titleContext.innerHTML="Franke Dowdraft Hood"
      bodyContext.innerHTML="The downdraft hood is an integral part of this all-in-one kitchen design. It effectively captures and removes cooking odors, smoke, and grease at the source by drawing them downward, thereby enhancing ventilation and maintaining a clean kitchen environment." 
      runSpecificAnimation("Davlumbaz.001", 4, 0);
@@ -474,6 +478,7 @@ gltfLoader.load(
      points[3].element.classList.add('clicked');
      document.getElementById('content').classList.add('fade-in')
    document.getElementById('content').classList.remove('fade-out')
+   document.getElementById('content').scrollTop = 0
      titleContext.innerHTML="Hidden Vertical Cabinet"
      bodyContext.innerHTML="The hidden vertical cabinet is an innovative storage solution, providing ample space for storing kitchen essentials, pantry items, and cookware. This maximizes storage capacity without compromising on the overall aesthetics of the kitchen."
      runSpecificAnimation("SideDrawer", 5, 3);
@@ -502,6 +507,7 @@ gltfLoader.load(
     runSpecificAnimation("Steak_Animation", 7, 4);
     document.getElementById('content').classList.add('fade-in')
    document.getElementById('content').classList.remove('fade-out')
+   document.getElementById('content').scrollTop = 0
     titleContext.innerHTML="Dexcook Induction Cooktop"
     bodyContext.innerHTML="The inclusion of an induction cooktop offers several advantages. It is energy-efficient, fast, and safe, as it only heats the cookware and not the surrounding surface. Induction cooking also provides the space that is usually occupied by the common cooktop, and creates the cleanest look."
     setTimeout(() => {
@@ -538,6 +544,7 @@ function handleWoodClick() {
     runSpecificAnimation("Action", 8, 5);
     document.getElementById('content').classList.add('fade-in')
    document.getElementById('content').classList.remove('fade-out')
+   document.getElementById('content').scrollTop = 0
     titleContext.innerHTML="Built in Drainer"
     bodyContext.innerHTML="The kitchen features a built-in drainer, which provides a convenient area for drying dishes and other kitchenware. This eliminates the need for a separate dish rack or drying area, saving additional space on the countertop and promoting a neat and organized kitchen environment."
   } else {
