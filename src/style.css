@@ -484,6 +484,10 @@ body
 
 @media(max-width: 600px) {
 
+  .category-card h2 {
+    margin-top: 0.2em;
+  }
+
   #body-context-intro{
     font-size: 0.8em;
   }
@@ -499,7 +503,7 @@ body
   }
 
   #content{
-    max-height: 135px;
+    max-height: 130px;
     scroll-behavior: auto;
     overflow: auto;
     max-width: 100%;
@@ -527,16 +531,16 @@ body
   .category-card {
     /* right: 1em;
     left: 1em; */
- width: 95%;
- right: 0;
-}
+  width: 95%;
+  right: 0;
+  }
   .point.visible .label 
-{
+  {
     transform: scale(0.75, 0.75);
-}
-.point.clicked #plus
-{
+  }
+  .point.clicked #plus
+  {
     transform: rotate(45deg)  scale(0.75, 0.75);
 
-}
+  }
 }
