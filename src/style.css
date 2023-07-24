@@ -499,7 +499,7 @@ body
   }
 
   #content{
-    max-height: 180px;
+    max-height: 135px;
     scroll-behavior: auto;
     overflow: auto;
     max-width: 100%;
