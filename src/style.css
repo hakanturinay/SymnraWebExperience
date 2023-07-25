@@ -522,7 +522,9 @@ body
     position: absolute
    }
   #logo{
-    left:1em
+    left:1em;
+    top: 1.5em;
+    
   }
    #logo img{
     width: 35%;
