@@ -652,6 +652,13 @@ startExperience.addEventListener('click', function(){
   document.getElementById('audioEmbed').play()
 })
 
+const redirectButton = document.getElementById('button-learn-more');
+
+redirectButton.addEventListener('click', () => {
+ 
+  window.location.href = 'https://smyrna-design.de/contact-us/'; // Replace with the URL you want to redirect to
+});
+
 let flagQr
 
 qrButton.addEventListener('click', function() {
