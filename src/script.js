@@ -212,7 +212,7 @@ const planeMesh = new THREE.Mesh(geometry, smokeMaterial);
 scene.add(planeMesh);
 
 gltfLoader.load(
-    '/models/SMYRNA_ALLINONEKITCHEN_draco.glb',
+    '/models/SMYRNA_ALLINONEKITCHEN_draco_v2.glb',
     (gltf) =>
     {
         model = gltf.scene;

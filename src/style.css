@@ -494,7 +494,7 @@ body
 
   .modalView{
     width: 85%;
-    height: 75%;
+    height: 73%;
     padding: 10px 10px;
     top: 55%;
   }
@@ -512,7 +512,7 @@ body
   }
 
   #nominated-logo{
-   top: 2em;
+   top: 1.5em;
    right: 0;
    pointer-events: none;
   }
