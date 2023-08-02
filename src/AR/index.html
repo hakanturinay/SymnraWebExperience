@@ -1,0 +1,56 @@
+<!-- v0.1.10 -->  <!--  link to this file was added in a comment here: https://github.com/google/model-viewer/issues/1531 . If you're editing this, please update your comment there. -->
+<html>
+	<head>
+		<title> SYMNRA </title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="demo-styles.css">
+
+	<!-- The following libraries and polyfills are recommended to maximize browser support -->
+	<!-- 🚨 REQUIRED: Web Components polyfill to support Edge and Firefox < 63 -->
+	<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.1.3/webcomponents-loader.js"></script>
+
+	<!-- 💁 OPTIONAL: Intersection Observer polyfill for better performance in Safari and IE11 -->
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+
+	<!-- 💁 OPTIONAL: Resize Observer polyfill improves resize behavior in non-Chrome browsers -->
+	<script src="https://unpkg.com/resize-observer-polyfill@1.5.0/dist/ResizeObserver.js"></script>
+	<script src="https://unpkg.com/focus-visible@5.1.0/dist/focus-visible.js"></script>
+	<!-- 💁 OPTIONAL: Fullscreen polyfill is needed to fully support AR features -->
+	<script src="https://unpkg.com/fullscreen-polyfill@1.0.2/dist/fullscreen.polyfill.js"></script>
+
+	<!-- Import the component -->
+	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+	</head>
+	<body>
+		<script type="module" src="ar.js"></script>
+		<!-- <a style="display:none;" 
+		id="androidFakeButton" 
+		href="intent://arvr.google.com/scene-viewer/1.0?file=https://colossusnft.s3.amazonaws.com/magnet/glb/magnet.glb&mode=ar_only#Intent;scheme=https;package=com.google.ar.core;action=android.intent.action.VIEW;S.browser_fallback_url=https://colossusnft.s3.amazonaws.com/magnet/index.html;end;">Model</a> -->
+		<div class="card">
+			<model-viewer 
+			id="modelviewer"
+			minimumRenderScale="1"
+			src="glb/SMYRNA_ALLINONEKITCHEN_AR_v4.glb"
+			camera-controls
+			camera-orbit="auto auto auto"
+			auto-rotate
+			ar
+			ar-modes="webxr scene-viewer quick-look"  
+			exposure="1" 
+			min-camera-orbit="auto auto auto"
+			max-camera-orbit="auto auto auto" 
+			min-field-of-view="auto" 
+			max-field-of-view="auto"
+			environment-image="st_2.hdr"
+			ios-src="usdz/SMYRNA_ALLINONEKITCHEN_AR_v4.usdz"
+			autoplay
+			>
+
+			</model-viewer>
+		</div>
+	</body>
+	
+</html>
