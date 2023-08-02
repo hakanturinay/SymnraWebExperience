@@ -664,10 +664,10 @@ let flagQr
 qrButton.addEventListener('click', function() {
   if(!isWeb){
 
-    // const otherWebsiteURL = 'https://hakanqreal.github.io/SymnraAR/';
+    const otherWebsiteURL = 'https://smyrna-ar.netlify.app';
     // window.location.href = 'AR/index.html';
     // Open the other website in a new tab/window
-    window.open('./AR/index.html', '_blank');
+    window.open(otherWebsiteURL, '_blank');
     return
   }
   qrButtonHandler = (qrButtonHandler + 1) % 2;
