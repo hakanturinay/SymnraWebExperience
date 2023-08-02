@@ -665,9 +665,9 @@ qrButton.addEventListener('click', function() {
   if(!isWeb){
 
     // const otherWebsiteURL = 'https://hakanqreal.github.io/SymnraAR/';
-    window.location.href = 'AR/index.html';
+    // window.location.href = 'AR/index.html';
     // Open the other website in a new tab/window
-    // window.open(otherWebsiteURL, '_blank');
+    window.open('AR/index.html', '_blank');
     return
   }
   qrButtonHandler = (qrButtonHandler + 1) % 2;
