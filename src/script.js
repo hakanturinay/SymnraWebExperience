@@ -525,7 +525,7 @@ gltfLoader.load(
    document.getElementById('content').classList.remove('fade-out')
    document.getElementById('category-card').style.pointerEvents ="all"
    document.getElementById('content').scrollTop = 0
-    titleContext.innerHTML="Dexcook Induction Cooktop"
+    titleContext.innerHTML="Induction Cooktop"
     bodyContext.innerHTML="The inclusion of an induction cooktop offers several advantages. It is energy-efficient, fast, and safe, as it only heats the cookware and not the surrounding surface. Induction cooking also provides the space that is usually occupied by the common cooktop, and creates the cleanest look."
     setTimeout(() => {
       smokeMaterial.opacity =0.35
