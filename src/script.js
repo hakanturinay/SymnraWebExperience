@@ -465,7 +465,7 @@ gltfLoader.load(
    document.getElementById('content').classList.remove('fade-out')
    document.getElementById('category-card').style.pointerEvents ="all"
    document.getElementById('content').scrollTop = 0
-     titleContext.innerHTML="Franke Dowdraft Hood"
+     titleContext.innerHTML="Downdraft Hood"
      bodyContext.innerHTML="The downdraft hood is an integral part of this all-in-one kitchen design. It effectively captures and removes cooking odors, smoke, and grease at the source by drawing them downward, thereby enhancing ventilation and maintaining a clean kitchen environment." 
      runSpecificAnimation("Davlumbaz.001", 4, 0);
    } else {
