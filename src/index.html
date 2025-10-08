@@ -1,143 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="HandheldFriendly" content="true" />
     <title>Smyrna</title>
-    <link rel="stylesheet" href="./style.css">
-    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-</head>
-<body>
-
-    
-
+    <link rel="stylesheet" href="./style-min.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+  </head>
+  <body>
     <audio id="steakSound" loop>
-        <source src="SteakSizzling.mp3" type="audio/mpeg">
+      <source src="SteakSizzling.mp3" type="audio/mpeg" />
     </audio>
 
     <audio id="audioEmbed" loop autoplay>
-        <source src="JazzIt.mp3" type="audio/mpeg">
+      <source src="JazzIt.mp3" type="audio/mpeg" />
     </audio>
 
     <div id="logo">
-        <img src="smyrna_logo.png" alt="">
+      <img src="smyrna_logo.png" alt="" />
     </div>
     <div id="nominated-logo">
-        <img src="UX_Design_Awards_2023_Logo_RGB@2x.png" alt="">
+      <img src="UX_Design_Awards_2023_Logo_RGB@2x.png" alt="" />
     </div>
     <canvas class="webgl"></canvas>
 
     <div class="modalView" id="modalView">
-        <!-- <div id="modalView__closeBtn"></div> -->
-        <div class="modalView__content centered">
-            <h1>Welcome!</h1> 
-          <p id="body-context-intro">Experience the future of kitchen design with the All-in-One Smyrna
-            Kitchen AR presentation! This innovative product offers a range of
-            functionalities:<br><br>
-            
-            Space Optimization: Maximize storage with hidden compartments,
-            making the most of your kitchen area. Just 200cm is all you need to
-            accommodate an All-in-One Kitchen!<br><br>
+      <!-- <div id="modalView__closeBtn"></div> -->
+      <div class="modalView__content centered">
+        <h1>Welcome!</h1>
+        <p id="body-context-intro">
+          Experience the future of kitchen design with the All-in-One Smyrna
+          Kitchen AR presentation! This innovative product offers a range of
+          functionalities:<br /><br />
 
-            Modern & Multifunctional Design: Enhance your kitchen aesthetics with
-            stylish and multifunctional elements.<br><br>
+          Space Optimization: Maximize storage with hidden compartments, making
+          the most of your kitchen area. Just 200cm is all you need to
+          accommodate an All-in-One Kitchen!<br /><br />
 
-            Durable and Eco-Friendly: With innovative technology, anti-scratch and
-            non-absorbent materials on the cooktop, the All-in-One Kitchen ensures
-            long-lasting quality while reducing energy consumption and
-            environmental impact.<br><br></p>
-        </div>
-        <button class="button-skipIntro" id="button-skipIntro">
-            <span>Start Experience</span>
-            
-          </button>
+          Modern & Multifunctional Design: Enhance your kitchen aesthetics with
+          stylish and multifunctional elements.<br /><br />
+
+          Durable and Eco-Friendly: With innovative technology, anti-scratch and
+          non-absorbent materials on the cooktop, the All-in-One Kitchen ensures
+          long-lasting quality while reducing energy consumption and
+          environmental impact.<br /><br />
+        </p>
+      </div>
+      <button class="button-skipIntro" id="button-skipIntro">
+        <span>Start Experience</span>
+      </button>
     </div>
 
     <div class="qr-code" id="qr-code-id">
-        <img id = "qrcodeImg" src="Symnra_QR.png" alt="">
-        <!-- <span class="close" id="close-btn">&times;</span> -->
+      <img id="qrcodeImg" src="Symnra_QR.png" alt="" />
+      <!-- <span class="close" id="close-btn">&times;</span> -->
     </div>
     <div class="category-card" id="category-card">
-        <div id="content">
-          <h2 id="title-context">Welcome!</h2>
-          <p id="body-context">Experience the future of kitchen design with the All-in-One Smyrna
-            Kitchen AR presentation! This innovative product offers a range of
-            functionalities:</p>
-        </div>
-  
-        <div id="bottom-buttons">
-            
-              <button class="circle-AR" id="qr-button-id">
-                  <span class="material-symbols-outlined">
-                      view_in_ar
-                      </span>
-              </button>
-              <button class="circle-AllAnimation" id="run-all-animation">
-                <span class="material-symbols-outlined">
-                    animation
-                    </span>
-              </button>
-              <button class="circle-Volume" id="volumeButton">
-                <span class="material-symbols-outlined" id="volume-span">
-                    volume_up
-                    </span>
-              </button>
-              <button class="button-learn-more" id="button-learn-more">
-                <span>Learn more</span>
-                
-              </button>
-        </div>
-        
+      <div id="content">
+        <h2 id="title-context">Welcome!</h2>
+        <p id="body-context">
+          Experience the future of kitchen design with the All-in-One Smyrna
+          Kitchen AR presentation! This innovative product offers a range of
+          functionalities:
+        </p>
       </div>
+
+      <div id="bottom-buttons">
+        <button class="circle-AR" id="qr-button-id">
+          <span class="material-symbols-outlined"> view_in_ar </span>
+        </button>
+        <button class="circle-AllAnimation" id="run-all-animation">
+          <span class="material-symbols-outlined"> animation </span>
+        </button>
+        <button class="circle-Volume" id="volumeButton">
+          <span class="material-symbols-outlined" id="volume-span">
+            volume_up
+          </span>
+        </button>
+        <button class="button-learn-more" id="button-learn-more">
+          <span>Learn more</span>
+        </button>
+      </div>
+    </div>
     <div class="loading-bar"></div>
-    
+
     <div id="all-points">
-    <div class="point point-0" id="scene-paddleBox">
-        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
-            add
-            </span></h2>
-        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
-    </div>
-    <div class="point point-1" id="scene-drawer">
-        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
-            add
-            </span></h2>
-        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
-    </div>
-    <div class="point point-2" id="scene-chair">
-        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
-            add
-            </span></h2>
-        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
+      <div class="point point-0" id="scene-paddleBox">
+        <h2 class="label" id="plus">
+          <span class="material-symbols-outlined"> add </span>
+        </h2>
+        <div class="text">
+          Cameras supporting night vision and heat vision with automatic
+          adjustment.
+        </div>
+      </div>
+      <div class="point point-1" id="scene-drawer">
+        <h2 class="label" id="plus">
+          <span class="material-symbols-outlined"> add </span>
+        </h2>
+        <div class="text">
+          Cameras supporting night vision and heat vision with automatic
+          adjustment.
+        </div>
+      </div>
+      <div class="point point-2" id="scene-chair">
+        <h2 class="label" id="plus">
+          <span class="material-symbols-outlined"> add </span>
+        </h2>
+        <div class="text">
+          Cameras supporting night vision and heat vision with automatic
+          adjustment.
+        </div>
+      </div>
+
+      <div class="point point-3" id="scene-sideDrawer">
+        <!-- <div class="label">+</div> -->
+        <h2 class="label" id="plus">
+          <span class="material-symbols-outlined"> add </span>
+        </h2>
+        <div class="text">
+          Cameras supporting night vision and heat vision with automatic
+          adjustment.
+        </div>
+      </div>
+
+      <div class="point point-4" id="scene-Steak&Pan">
+        <!-- <div class="label">+</div> -->
+        <h2 class="label" id="plus">
+          <span class="material-symbols-outlined"> add </span>
+        </h2>
+        <div class="text">
+          Cameras supporting night vision and heat vision with automatic
+          adjustment.
+        </div>
+      </div>
+
+      <div class="point point-5" id="scene-Wood">
+        <!-- <div class="label">+</div> -->
+        <h2 class="label" id="plus">
+          <span class="material-symbols-outlined"> add </span>
+        </h2>
+        <div class="text">
+          Cameras supporting night vision and heat vision with automatic
+          adjustment.
+        </div>
+      </div>
     </div>
 
-    <div class="point point-3" id="scene-sideDrawer">
-        <!-- <div class="label">+</div> -->
-        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
-            add
-            </span></h2>
-        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
-    </div>
-
-    <div class="point point-4" id="scene-Steak&Pan">
-        <!-- <div class="label">+</div> -->
-        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
-            add
-            </span></h2>
-        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
-    </div>
-
-    <div class="point point-5" id="scene-Wood">
-        <!-- <div class="label">+</div> -->
-        <h2 class="label" id='plus' ><span class="material-symbols-outlined">
-            add
-            </span></h2>
-        <div class="text">Cameras supporting night vision and heat vision with automatic adjustment.</div>
-    </div>
-    </div>
-      
-    <script type="module" src="./script.js"></script>
-</body>
+    <script type="module" src="./script-min.js"></script>
+  </body>
 </html>
